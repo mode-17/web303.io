@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web.303 Homepage</title>
+  <link rel="icon" href="www.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <header class="bg-indigo-900 text-white py-5 px-10">
+    <nav class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-lg font-bold">
+        <img src="WEB303 1.svg" alt="WEB303 Logo" class="h-8">
+      </div>
+  
+      <!-- Hamburger Icon -->
+      <button 
+        id="menu-toggle" 
+        class="block lg:hidden text-white focus:outline-none"
+      >
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+  
+      <!-- Navigation Links -->
+      <div 
+        id="menu" 
+        class="hidden lg:flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 absolute lg:static bg-indigo-900 lg:bg-transparent w-full lg:w-auto px-10 lg:px-0 py-5 lg:py-0 top-16 left-0 lg:top-auto"
+      >
+        <a href="#" class="block hover:underline py-2">Home</a>
+        <a href="subfolder/admin.html" class="block hover:underline py-2">Admin</a>
+        <a href="#contact" class="block hover:underline py-2">Contact Us</a>
+        <div class="hidden lg:block ml-6">
+          <a href="registration1.html" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-md text-sm">Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="text-center py-20 px-10 bg-indigo-500">
+      <h1 class="text-5xl font-bold mb-6 text-white">Welcome To Web.303!</h1>
+      <h2 class="text-3xl font-bold mb-4 text-white">
+        We're Excited To Have You Join Our <br> Community of AI Enthusiasts.
+      </h2>
+      <p class="max-w-lg mx-auto mb-6 text-white">
+        As an attendee, you'll have access to exclusive workshops, keynote speeches, and networking opportunities.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="registration1.html" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-md">Register</a>
+        <a href="login.html" class="px-6 py-3 rounded-md border-2 border-white hover:border-gray-200">Log in</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white px-10 text-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+          <h3 class="text-3xl font-bold mb-4">Your Gateway <br> to the AI Community</h3>
+          <p>Web.303 is more than just a conference; it's a thriving online community where AI enthusiasts can connect, collaborate, and learn. Our platform offers a wide range of features designed to enhance your experience and help you achieve your goals.</p>
+        </div>
+
+        <div class="text-center mb-20">
+          <h3 class="text-2xl font-bold mb-4">Brief Overview</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">Personalized Profiles</h4>
+            <p>Create a detailed profile that showcases your expertise, interests, and accomplishments. Customize your profile with a professional photo, bio, and relevant links.</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">Advanced Search</h4>
+            <p>Easily find other users based on their location, skills, or expertise. Use our advanced search filters to connect with like-minded individuals.</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">Ticketing System</h4>
+            <p><strong>E-Payment:</strong> Enables online payment options. <strong>Online Ticketing:</strong> Provides a convenient way for users to purchase tickets.</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">About Web.303</h4>
+            <p>Connect with other attendees directly through our messaging system. Join group discussions, participate in forums, and build lasting relationships.</p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">Messaging and Networking</h4>
+            <p>Web.303 is a premier AI conference dedicated to fostering innovation, collaboration, and knowledge sharing within the AI community. </p>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-lg text-center">
+            <h4 class="font-bold text-lg mb-3">Our Mission</h4>
+            <p>Our mission is to bring together experts, researchers, and enthusiasts to explore the latest advancements in artificial intelligence and its potential to shape the future.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="py-20 bg-indigo-700 text-white px-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-4xl font-bold mb-10">The Speakers!</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-100 p-4 rounded-lg text-center text-gray-800">
+            <img src="8.jpg" alt="Profile image for Future of AI speaker" class="w-full h-auto mb-2">
+            <h5 class="font-bold">Future of AI</h5>
+            <p class="text-sm">Akara Daniel Chinonso</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center text-gray-800">
+            <img src="aza.jpg" alt="Profile image for AI in Business speaker" class="w-full h-auto mb-2">
+            <h5 class="font-bold">AI in Business</h5>
+            <p class="text-sm">Ndu-Uhuebgu Modestus Osinachi</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center text-gray-800">
+            <img src="3.jpg" alt="Profile image for AI Ethics speaker" class="w-full h-auto mb-2">
+            <h5 class="font-bold">AI Ethics</h5>
+            <p class="text-sm">Chibuike Victor .C</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center text-gray-800">
+            <img src="4.jpg" alt="Profile image for AI in Healthcare speaker" class="w-full h-auto mb-2">
+            <h5 class="font-bold">AI in Healthcare</h5>
+            <p class="text-sm">Amarachi Judith</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white text-gray-800 px-10">
+      <div class="max-w-6xl mx-auto text-center mb-6">
+        <h3 class="text-4xl font-bold mb-10">Meet The Team</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="1.jpg" alt="Profile image for Team Lead" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Team Lead & Back End Dev.</h5>
+            <p class="text-xs">Appolos Victor Chidiebere</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="2.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Front End Developer</h5>
+            <p class="text-xs">Anayo Miracle Kelechi</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="3.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Front End Developer</h5>
+            <p class="text-xs">Chibuike Victor . C</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="4.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Ui/Ux Designer</h5>
+            <p class="text-xs">Amarachi Judith</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="5.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">The Team Planner</h5>
+            <p class="text-xs">Onyekwere Chioma Victoria</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="6.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">The Team Planner</h5>
+            <p class="text-xs">Dugwu Deborah Nwanneka</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="7.jpg" alt="Profile image for Backend Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Backend Developer</h5>
+            <p class="text-xs">Alozie chinonye Philemon</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="8.jpg" alt="Profile image for Front End Dev" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Front End Developer</h5>
+            <p class="text-xs">Akara Daniel Chinonso</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <img src="9.jpg" alt="Profile image for Ui/Ux Designer" class="w-full h-auto mb-2">
+            <h5 class="font-bold text-sm">Ui/Ux Designer</h5>
+            <p class="text-xs">Ndu-Uhuebgu Modestus Osinachi</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-indigo-900 text-white py-6 px-10 text-sm">
+    <div class="flex justify-between items-center">
+      <div>
+        <img src="WEB303 1.svg" alt="WEB303 Logo" class="h-8">
+      </div>
+      <div class="text-white-600 text-sm bold">
+        &copy; Made By CYB GROUP 1
+      </div>
+      <div>
+        Follow us:
+        <a href="https://www.facebook.com/victor.yami001" class="hover:underline text-blue-300 ml-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/stylesPentester" class="hover:underline text-blue-300 ml-2"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/philemon-alozie-184a5028a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:underline text-blue-300 ml-2"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle Menu Visibility
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const menuIcon = document.getElementById('menu-icon');
+    
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times'); // Change icon to 'close' when menu is open
+    });
+  </script>
+
+</body>
+</html>

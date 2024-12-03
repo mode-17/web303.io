@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Link for favicon -->
+    <link rel="icon" href="../www.png" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-cyan-100 to-green-100 flex flex-col items-center justify-center">
+    <!-- Navbar -->
+    <nav class="bg-white py-4 shadow-md w-full fixed top-0">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="../WEB303 1.svg" alt="WEB.303 Logo" class="h-10">
+            </a>
+
+            <!-- Hamburger Menu Button -->
+            <button id="menuButton" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="navLinks" class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="index.html" class="text-gray-800 hover:text-gray-600">Home</a>
+                <a href="index.html#contact" class="text-gray-800 hover:text-gray-600">Contact Us</a>
+                <a href="registration1.html" class="bg-blue-500 text-white py-2 px-5 rounded-full hover:bg-blue-400">Register</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden flex flex-col space-y-4 mt-4 bg-gray-100 py-4 px-6 shadow-md">
+            <a href="index.html" class="text-gray-800 hover:text-gray-600">Home</a>
+            <a href="index.html#contact" class="text-gray-800 hover:text-gray-600">Contact Us</a>
+            <a href="registration1.html" class="bg-blue-500 text-white py-2 px-5 rounded-full hover:bg-blue-400">Register</a>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center mt-24 p-6 space-y-8 md:space-y-0 md:space-x-16">
+        <!-- Welcome Section -->
+        <div class="text-gray-800 text-center md:text-left">
+            <h1 class="text-5xl font-bold mb-4">WELCOME</h1>
+            <h2 class="text-3xl font-semibold mb-6">To WEB.303!</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                As an Admin, you are expected to verify and report any abnormal functionality in the website. 
+                Join us as we explore the latest AI trends and connect with like-minded individuals.
+            </p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-md">
+            <h3 class="text-3xl font-semibold mb-6 text-gray-800">Login</h3>
+            <form id="loginForm">
+              <div class="mb-4">
+                <label for="username" class="block text-gray-700 text-sm font-semibold mb-2">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+            </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+                </div>
+                <div class="flex justify-between items-center mb-6">
+                    <a href="#" class="text-blue-500 text-sm hover:underline">Forgot Password?</a>
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white w-full py-3 rounded-full font-semibold transition duration-300">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center bg-white py-4 shadow-md mt-8">
+        <div class="text-gray-600 text-sm">
+            &copy; Made By CYB GROUP 1
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Menu Toggle
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+  
+      menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+      });
+  
+   // Replace with permanent login details
+   const adminUsername = "Admin"; // Example hardcoded username
+   const adminPassword = "password123"; // Example hardcoded password
+
+   // Login Form Submission
+   document.getElementById('loginForm').addEventListener('submit', function (event) {
+       event.preventDefault(); // Prevent default form submission
+
+       const username = document.getElementById('username').value.trim(); // Use proper id for username field
+       const password = document.getElementById('password').value;
+
+       if (username === adminUsername && password === adminPassword) {
+           alert("Welcome! You have successfully logged in. Redirecting to your dashboard...");
+           window.location.href = "admin_dashboard.html"; // Correct redirect to admin dashboard
+       } else {
+           alert("Invalid username or password. Please try again.");
+       }
+   });
+  </script>
+  
+</body>
+</html>

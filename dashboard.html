@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web.303 Dashboard</title>
+        <!-- Link for favicon (title image) -->
+    <link rel="icon" href="www.png" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div class="flex flex-wrap justify-between items-center bg-white shadow-md p-5">
+        <div class="text-2xl flex items-center mb-4 md:mb-0">
+            <i class="fas fa-bell text-blue-600 mr-4"></i>
+            <span id="greeting">Good Morning 😊</span>
+        </div>
+        <div class="relative">
+            <img src="pip.jpeg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" id="profilePic">
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 bg-white shadow-md rounded-lg p-2 text-sm">
+                <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- First 3 Boxes -->
+        <div class="bg-blue-600 text-white rounded-lg p-4 flex-1 md:flex-none" style="height: 165px;">
+            <div class="text-lg">Total Event</div>
+            <div class="text-4xl">01</div>
+            <i class="fas fa-ticket-alt text-2xl"></i>
+        </div>
+        <div class="bg-blue-600 text-white rounded-lg p-4 flex-1 md:flex-none" style="height: 165px;">
+            <div class="text-lg">Event Attended</div>
+            <div class="text-4xl">02</div>
+            <i class="fas fa-users text-2xl"></i>
+        </div>
+        <div class="bg-purple-600 text-white rounded-lg p-4 flex-1 md:flex-none" style="height: 165px;">
+            <div class="text-lg">Certificate Earned</div>
+            <div class="text-4xl">01</div>
+            <i class="fas fa-certificate text-2xl"></i>
+
+        </div>
+
+        <!-- Slideshow Box -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white rounded-lg overflow-hidden" style="height: 380px;">
+            <div class="slideshow-container h-full">
+                <img src="5.jpg" alt="Slide 1" class="w-full h-full object-cover slideshow">
+                <img src="1.jpg" alt="Slide 2" class="w-full h-full object-cover slideshow hidden">
+                <img src="9.jpg" alt="Slide 3" class="w-full h-full object-cover slideshow hidden">
+                <img src="2.jpg" alt="Slide 4" class="w-full h-full object-cover slideshow hidden">
+                <img src="6.jpg" alt="Slide 5" class="w-full h-full object-cover slideshow hidden">
+                <img src="8.jpg" alt="Slide 6" class="w-full h-full object-cover slideshow hidden">
+                <img src="4.jpg" alt="Slide 7" class="w-full h-full object-cover slideshow hidden">
+                <img src="3.jpg" alt="Slide 8" class="w-full h-full object-cover slideshow hidden">
+            </div>
+        </div>
+
+        <!-- 5th Box with Map and Events -->
+        <div class="col-span-1 md:col-span-2 bg-white rounded-lg p-4">
+            <div class="text-lg font-semibold mb-2">Event Locations</div>
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div class="flex flex-col space-y-2">
+                    <button class="bg-gray-200 p-2 rounded hover:bg-gray-300" onclick="showMap('location1')">Future of AI: Obi John Chinekwu</button>
+                    <button class="bg-gray-200 p-2 rounded hover:bg-gray-300" onclick="showMap('location2')">AI in Business: Biggit Paul</button>
+                    <button class="bg-gray-200 p-2 rounded hover:bg-gray-300" onclick="showMap('location3')">AI Ethics: Onward Tochukwu</button>
+                </div>
+                <div id="mapContainer" class="flex-1 h-64 md:h-96 rounded overflow-hidden"></div>
+            </div>
+        </div>
+
+        <!-- Last Box for Activities -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white rounded-lg p-4">
+            <div class="text-xl font-bold mb-4">Activities</div>
+            <ul class="text-sm">
+                <li class="mb-2">8:00 AM - Workshop: Intro to AI</li>
+                <li class="mb-2">10:00 AM - Panel Discussion: Future of Technology</li>
+                <li class="mb-2">2:00 PM - Networking Event</li>
+                <li class="mb-2">3:00 PM - End of Event</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-xs text-gray-600 mt-4 text-center">
+        &copy; Made by CYB GROUP 1
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Profile picture dropdown
+        document.getElementById('profilePic').addEventListener('click', function () {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Change greeting based on user time
+        function updateGreeting() {
+            const hours = new Date().getHours();
+            let greeting = "Good Morning 😊";
+            if (hours >= 12 && hours < 18) {
+                greeting = "Good Afternoon 😊";
+            } else if (hours >= 18) {
+                greeting = "Good Evening 😊";
+            }
+            document.getElementById('greeting').innerText = greeting;
+        }
+        updateGreeting();
+
+        // Slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slideshow');
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.add('hidden');
+                if (index === slideIndex) {
+                    slide.classList.remove('hidden');
+                }
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+        showSlides();
+
+        // Change map based on selected event
+        function showMap(location) {
+            let mapHtml = '';
+            if (location === 'location1') {
+                mapHtml = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.454777945226!2d3.361351573667829!3d6.5902574934033975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b924189000003%3A0xe772fd689d066f24!2sOAU%20Conference%20Centre%20%26%20Guest%20Houses%20Ltd!5e0!3m2!1sen!2sng!4v1731015508936!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (location === 'location2') {
+                mapHtml = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3622408013994!2d3.3488878736679584!3d6.60182619339205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b923100000001%3A0xf2be82da72bf7561!2sConference%20Centre%20and%20Guest%20house!5e0!3m2!1sen!2sng!4v1731015525374!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (location === 'location3') {
+                mapHtml = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.674677525997!2d3.3484201736682053!3d6.554623293434659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf50f89e7c327%3A0x7cde1cb0375f1483!2sLandmark%20Event%20Centre!5e0!3m2!1sen!2sng!4v1731015544054!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            }
+            document.getElementById('mapContainer').innerHTML = mapHtml;
+        }
+    </script>
+</body>
+</html>
